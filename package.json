@@ -2,8 +2,7 @@
 	"name": "@faustbrian/foreman",
 	"version": "0.1.0",
 	"description": "Programmatic use of pm2 without callback hell.",
-	"author": "Brian Faust <hello@basecode.sh>",
-	"license": "MIT",
+	"homepage": "https://github.com/faustbrian/foreman",
 	"bugs": {
 		"url": "https://github.com/faustbrian/foreman/issues"
 	},
@@ -11,22 +10,58 @@
 		"type": "git",
 		"url": "git@github.com:faustbrian/foreman.git"
 	},
-	"homepage": "https://github.com/faustbrian/foreman",
+	"license": "MIT",
+	"author": "Brian Faust <hello@basecode.sh>",
 	"files": [
 		"dist"
 	],
 	"main": "dist/index",
 	"types": "dist/index",
 	"scripts": {
-		"prepublishOnly": "yarn format && yarn test && yarn build",
-		"clean": "rimraf .coverage dist tmp",
 		"build": "yarn clean && tsc",
 		"build:watch": "yarn build -w",
+		"clean": "rimraf .coverage dist tmp",
 		"format": "yarn lint && yarn prettier",
 		"lint": "tslint -c tslint.json 'src/**/*.ts' --fix",
+		"prepublishOnly": "yarn format && yarn test && yarn build",
 		"prettier": "prettier --write \"./*.{ts,js,json,md}\" \"./**/*.{ts,js,json,md}\"",
 		"test": "jest",
 		"test:watch": "jest --watchAll"
+	},
+	"jest": {
+		"bail": true,
+		"collectCoverage": true,
+		"collectCoverageFrom": [
+			"src/**/*.ts",
+			"!**/node_modules/**"
+		],
+		"coverageDirectory": "<rootDir>/.coverage",
+		"coverageReporters": [
+			"json",
+			"lcov",
+			"text",
+			"clover",
+			"html"
+		],
+		"moduleFileExtensions": [
+			"ts",
+			"tsx",
+			"js",
+			"jsx",
+			"json",
+			"node"
+		],
+		"setupFilesAfterEnv": [
+			"jest-extended"
+		],
+		"testEnvironment": "node",
+		"testMatch": [
+			"**/*.test.ts"
+		],
+		"transform": {
+			"^.+\\.tsx?$": "ts-jest"
+		},
+		"verbose": true
 	},
 	"dependencies": {
 		"execa": "^1.0.0"
@@ -50,40 +85,5 @@
 	},
 	"engines": {
 		"node": ">=10.4"
-	},
-	"jest": {
-		"testEnvironment": "node",
-		"bail": true,
-		"verbose": true,
-		"transform": {
-			"^.+\\.tsx?$": "ts-jest"
-		},
-		"testMatch": [
-			"**/*.test.ts"
-		],
-		"moduleFileExtensions": [
-			"ts",
-			"tsx",
-			"js",
-			"jsx",
-			"json",
-			"node"
-		],
-		"collectCoverage": true,
-		"coverageDirectory": "<rootDir>/.coverage",
-		"collectCoverageFrom": [
-			"src/**/*.ts",
-			"!**/node_modules/**"
-		],
-		"coverageReporters": [
-			"json",
-			"lcov",
-			"text",
-			"clover",
-			"html"
-		],
-		"setupFilesAfterEnv": [
-			"jest-extended"
-		]
 	}
 }
