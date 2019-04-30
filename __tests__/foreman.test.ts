@@ -9,7 +9,7 @@ function start(name: string): ExecaReturns {
 		{
 			script: resolve(__dirname, "app.js"),
 		},
-		[`--name=${name}`],
+		{ name },
 	);
 }
 

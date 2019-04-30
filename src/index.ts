@@ -42,8 +42,8 @@ export class Foreman {
 		}
 	}
 
-	public start(opts: Record<string, any>, flags: string[] = []): ExecaReturns {
-		let command: string = `pm2 start ${opts.script} ${flags.join(" ")} `;
+	public start(opts: Record<string, any>, flags: Record<string, any> = []): ExecaReturns {
+		let command: string = `pm2 start ${opts.script} ${this.flagsToString(flags)}`;
 
 		if (opts.args) {
 			command += ` -- ${opts.args}`;
@@ -52,12 +52,12 @@ export class Foreman {
 		return shellSync(command);
 	}
 
-	public stop(id: ProcessIdentifier, flags: string[] = []): ExecaReturns {
-		return shellSync(`pm2 stop ${id} ${flags.join(" ")}`);
+	public stop(id: ProcessIdentifier, flags: Record<string, any> = []): ExecaReturns {
+		return shellSync(`pm2 stop ${id} ${this.flagsToString(flags)}`);
 	}
 
-	public restart(id: ProcessIdentifier, flags: string[] = []): ExecaReturns {
-		return shellSync(`pm2 restart ${id} ${flags.join(" ")}`);
+	public restart(id: ProcessIdentifier, flags: Record<string, any> = []): ExecaReturns {
+		return shellSync(`pm2 restart ${id} ${this.flagsToString(flags)}`);
 	}
 
 	public reload(id: ProcessIdentifier): ExecaReturns {
@@ -142,5 +142,23 @@ export class Foreman {
 
 	public missing(id: ProcessIdentifier): boolean {
 		return !this.has(id);
+	}
+
+	protected flagsToString(flags: Record<string, any>): string {
+		const mappedFlags: string[] = [];
+
+		for (const [key, value] of Object.entries(flags)) {
+			if (value !== undefined) {
+				if (value === true) {
+					mappedFlags.push(`--${key}`);
+				} else if (typeof value === "string") {
+					mappedFlags.push(value.includes(" ") ? `--${key}="${value}"` : `--${key}=${value}`);
+				} else {
+					mappedFlags.push(`--${key}=${value}`);
+				}
+			}
+		}
+
+		return mappedFlags.join(" ");
 	}
 }
