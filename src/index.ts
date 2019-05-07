@@ -56,12 +56,24 @@ export class Foreman {
 		return shellSync(command);
 	}
 
-	public stop(id: ProcessIdentifier, flags: Record<string, any> = []): ExecaReturns {
-		return shellSync(`pm2 stop ${id} ${this.flagsToString(flags)}`);
+	public stop(id: ProcessIdentifier, flags: Record<string, any> = {}): ExecaReturns {
+		let command: string = `pm2 stop ${id}`;
+
+		if (flags) {
+			command += ` ${this.flagsToString(flags)}`;
+		}
+
+		return shellSync(command);
 	}
 
-	public restart(id: ProcessIdentifier, flags: Record<string, any> = []): ExecaReturns {
-		return shellSync(`pm2 restart ${id} ${this.flagsToString(flags)}`);
+	public restart(id: ProcessIdentifier, flags: Record<string, any> = {}): ExecaReturns {
+		let command: string = `pm2 restart ${id}`;
+
+		if (flags) {
+			command += ` ${this.flagsToString(flags)}`;
+		}
+
+		return shellSync(command);
 	}
 
 	public reload(id: ProcessIdentifier): ExecaReturns {

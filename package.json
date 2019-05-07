@@ -1,6 +1,6 @@
 {
 	"name": "@faustbrian/foreman",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"description": "Programmatic use of pm2 without callback hell.",
 	"homepage": "https://github.com/faustbrian/foreman",
 	"bugs": {
