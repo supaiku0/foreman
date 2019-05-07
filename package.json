@@ -1,6 +1,6 @@
 {
 	"name": "@faustbrian/foreman",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "Programmatic use of pm2 without callback hell.",
 	"homepage": "https://github.com/faustbrian/foreman",
 	"bugs": {
@@ -70,12 +70,13 @@
 		"@hapi/hapi": "^18.3.1",
 		"@sindresorhus/tsconfig": "^0.3.0",
 		"@types/execa": "^0.9.0",
+		"@types/hapi__hapi": "^18.2.1",
 		"@types/jest": "^24.0.12",
-		"@types/node": "^11.13.8",
+		"@types/node": "^12.0.0",
 		"@types/prettier": "^1.16.3",
 		"@types/rimraf": "^2.0.2",
 		"codecov": "^3.3.0",
-		"jest": "^24.7.1",
+		"jest": "^24.8.0",
 		"jest-extended": "^0.11.1",
 		"prettier": "^1.17.0",
 		"rimraf": "^2.6.3",
@@ -83,8 +84,5 @@
 		"tslint": "^5.16.0",
 		"tslint-config-prettier": "^1.18.0",
 		"typescript": "^3.4.5"
-	},
-	"engines": {
-		"node": ">=10.4"
 	}
 }

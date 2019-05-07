@@ -42,8 +42,12 @@ export class Foreman {
 		}
 	}
 
-	public start(opts: Record<string, any>, flags: Record<string, any> = []): ExecaReturns {
-		let command: string = `pm2 start ${opts.script} ${this.flagsToString(flags)}`;
+	public start(opts: Record<string, any>, flags: Record<string, any> = {}): ExecaReturns {
+		let command: string = `pm2 start ${opts.script}`;
+
+		if (flags) {
+			command += ` ${this.flagsToString(flags)}`;
+		}
 
 		if (opts.args) {
 			command += ` -- ${opts.args}`;
