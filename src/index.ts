@@ -149,8 +149,7 @@ export class Foreman {
 	public has(id: ProcessIdentifier): boolean {
 		try {
 			const { stdout } = shellSync(`pm2 id ${id} | awk '{ print $2 }'`);
-
-			return !!stdout;
+			return !!stdout && !isNaN(Number(stdout));
 		} catch (error) {
 			return false;
 		}
