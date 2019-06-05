@@ -1,14 +1,14 @@
 {
-	"name": "@faustbrian/foreman",
+	"name": "@typeskrift/foreman",
 	"version": "0.1.3",
 	"description": "Programmatic use of pm2 without callback hell.",
-	"homepage": "https://github.com/faustbrian/foreman",
+	"homepage": "https://github.com/typeskrift/foreman",
 	"bugs": {
-		"url": "https://github.com/faustbrian/foreman/issues"
+		"url": "https://github.com/typeskrift/foreman/issues"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git@github.com:faustbrian/foreman.git"
+		"url": "git@github.com:typeskrift/foreman.git"
 	},
 	"license": "MIT",
 	"author": "Brian Faust <hello@basecode.sh>",

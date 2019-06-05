@@ -2,16 +2,16 @@
 
 > Programmatic use of pm2 without callback hell.
 
-[![Latest Version](https://badgen.now.sh/npm/v/@faustbrian/foreman)](https://www.npmjs.com/package/@faustbrian/foreman)
-[![Node Engine](https://badgen.now.sh/npm/node/@faustbrian/foreman)](https://www.npmjs.com/package/@faustbrian/foreman)
-[![Build Status](https://badgen.now.sh/circleci/github/faustbrian/foreman)](https://circleci.com/gh/faustbrian/foreman)
-[![Codecov](https://badgen.now.sh/codecov/c/github/faustbrian/foreman)](https://codecov.io/gh/faustbrian/foreman)
+[![Latest Version](https://badgen.now.sh/npm/v/@typeskrift/foreman)](https://www.npmjs.com/package/@typeskrift/foreman)
+[![Node Engine](https://badgen.now.sh/npm/node/@typeskrift/foreman)](https://www.npmjs.com/package/@typeskrift/foreman)
+[![Build Status](https://badgen.now.sh/circleci/github/typeskrift/foreman)](https://circleci.com/gh/typeskrift/foreman)
+[![Codecov](https://badgen.now.sh/codecov/c/github/typeskrift/foreman)](https://codecov.io/gh/typeskrift/foreman)
 [![License: MIT](https://badgen.now.sh/badge/license/MIT/green)](https://opensource.org/licenses/MIT)
 
 ## Installation
 
 ```bash
-yarn add @faustbrian/foreman
+yarn add @typeskrift/foreman
 ```
 
 ## Testing
