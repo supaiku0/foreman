@@ -6,7 +6,7 @@
 [![Node Engine](https://badgen.now.sh/npm/node/@typeskrift/foreman)](https://www.npmjs.com/package/@typeskrift/foreman)
 [![Build Status](https://badgen.now.sh/circleci/github/typeskrift/foreman)](https://circleci.com/gh/typeskrift/foreman)
 [![Codecov](https://badgen.now.sh/codecov/c/github/typeskrift/foreman)](https://codecov.io/gh/typeskrift/foreman)
-[![License: MIT](https://badgen.now.sh/badge/license/MIT/green)](https://opensource.org/licenses/MIT)
+[![License: MPL-2.0](https://badgen.now.sh/badge/license/MPL-2.0/green)](https://mozilla.org/MPL/2.0/)
 
 ## Installation
 
@@ -26,9 +26,8 @@ If you discover a security vulnerability within this package, please send an e-m
 
 ## Credits
 
--   [Brian Faust](https://github.com/faustbrian)
--   [All Contributors](../../../../contributors)
+This project exists thanks to all the people who [contribute](../../contributors).
 
 ## License
 
-[MIT](LICENSE) © [Brian Faust](https://basecode.sh)
+Mozilla Public License Version 2.0 ([MPL-2.0](./LICENSE)).
