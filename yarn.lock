@@ -603,9 +603,9 @@
   integrity sha512-ZVbo1qAFC5jRXoSCpFoX4FOLkGlB4hM1NBDsyOGgFeL/W9uX0aHYgtQjFd4aqNye6PKTp/p6iyVR6eeAHvu9nw==
 
 "@types/hapi__hapi@^18.2.1":
-  version "18.2.1"
-  resolved "https://registry.yarnpkg.com/@types/hapi__hapi/-/hapi__hapi-18.2.1.tgz#f34311b36c77ed3ce06a33cf3b7eb9f9a55340d2"
-  integrity sha512-7Lqf2PxUaKYFVgC00eyf8Fknw3EQTnG+rurzHSh87qInE5oVbDREPvY2MEI29gezX39QOH4HazV5kfdshzC1WA==
+  version "18.2.3"
+  resolved "https://registry.yarnpkg.com/@types/hapi__hapi/-/hapi__hapi-18.2.3.tgz#b4fd277daa6e659d96712a16716178f7fd69125d"
+  integrity sha512-fDLS+F1ORahczOH+iZfgLDc6gBu1iHEtb3hCey+GzE6T8KkvAmvroOcagE1VdBVckClful0DfsH2S/2Zx1e3mg==
   dependencies:
     "@types/hapi__boom" "*"
     "@types/hapi__catbox" "*"
@@ -691,12 +691,7 @@
   resolved "https://registry.yarnpkg.com/@types/minimatch/-/minimatch-3.0.3.tgz#3dca0e3f33b200fc7d1139c0cd96c1268cadfd9d"
   integrity sha512-tHq6qdbT9U1IRSGf14CL0pUlULksvY9OZ+5eEgl1N7t+OA3tGvNpxJCzuKQlsNgCVwbAs670L1vcVQi8j9HjnA==
 
-"@types/node@*":
-  version "11.13.8"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-11.13.8.tgz#e5d71173c95533be9842b2c798978f095f912aab"
-  integrity sha512-szA3x/3miL90ZJxUCzx9haNbK5/zmPieGraZEe4WI+3srN0eGLiT22NXeMHmyhNEopn+IrxqMc7wdVwvPl8meg==
-
-"@types/node@^12.0.0":
+"@types/node@*", "@types/node@^12.0.0":
   version "12.0.0"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-12.0.0.tgz#d11813b9c0ff8aaca29f04cbc12817f4c7d656e5"
   integrity sha512-Jrb/x3HT4PTJp6a4avhmJCDEVrPdqLfl3e8GGMbpkGGdwAV5UGlIs4vVEfsHHfylZVOKZWpOqmqFH8CbfOZ6kg==
