@@ -603,9 +603,9 @@
   integrity sha512-ZVbo1qAFC5jRXoSCpFoX4FOLkGlB4hM1NBDsyOGgFeL/W9uX0aHYgtQjFd4aqNye6PKTp/p6iyVR6eeAHvu9nw==
 
 "@types/hapi__hapi@^18.2.1":
-  version "18.2.3"
-  resolved "https://registry.yarnpkg.com/@types/hapi__hapi/-/hapi__hapi-18.2.3.tgz#b4fd277daa6e659d96712a16716178f7fd69125d"
-  integrity sha512-fDLS+F1ORahczOH+iZfgLDc6gBu1iHEtb3hCey+GzE6T8KkvAmvroOcagE1VdBVckClful0DfsH2S/2Zx1e3mg==
+  version "18.2.4"
+  resolved "https://registry.yarnpkg.com/@types/hapi__hapi/-/hapi__hapi-18.2.4.tgz#b0b85c3ed260b06af03dfb9fd2bd43bdb672e3fc"
+  integrity sha512-CB2WYSu7JWuNlFzTpXAgBlHg8RYIR64SwM3xja76Yu9s0TtcQM9q+0c67LXC5gVP8/utQWeRiKzq9SolcAq9yg==
   dependencies:
     "@types/hapi__boom" "*"
     "@types/hapi__catbox" "*"
