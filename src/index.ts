@@ -1,4 +1,4 @@
-import { ExecaReturns, shellSync } from "execa";
+import { ExecaSyncReturnValue, sync } from "execa";
 
 export enum ProcessState {
 	Online = "online",
@@ -16,7 +16,11 @@ export type ProcessDescription = Record<string, any>;
 export class Foreman {
 	public list(): ProcessDescription[] | undefined {
 		try {
-			const { stdout } = shellSync("pm2 jlist");
+			const { stdout } = this.shellSync("pm2 jlist");
+
+			if (!stdout) {
+				return undefined;
+			}
 
 			const lastLine: string | undefined = stdout.split("\n").pop();
 
@@ -42,7 +46,7 @@ export class Foreman {
 		}
 	}
 
-	public start(opts: Record<string, any>, flags: Record<string, any> = {}): ExecaReturns {
+	public start(opts: Record<string, any>, flags: Record<string, any> = {}): ExecaSyncReturnValue {
 		let command: string = `pm2 start ${opts.script}`;
 
 		if (flags) {
@@ -53,55 +57,55 @@ export class Foreman {
 			command += ` -- ${opts.args}`;
 		}
 
-		return shellSync(command);
+		return this.shellSync(command);
 	}
 
-	public stop(id: ProcessIdentifier, flags: Record<string, any> = {}): ExecaReturns {
+	public stop(id: ProcessIdentifier, flags: Record<string, any> = {}): ExecaSyncReturnValue {
 		let command: string = `pm2 stop ${id}`;
 
 		if (flags) {
 			command += ` ${this.flagsToString(flags)}`;
 		}
 
-		return shellSync(command);
+		return this.shellSync(command);
 	}
 
-	public restart(id: ProcessIdentifier, flags: Record<string, any> = {}): ExecaReturns {
+	public restart(id: ProcessIdentifier, flags: Record<string, any> = {}): ExecaSyncReturnValue {
 		let command: string = `pm2 restart ${id}`;
 
 		if (flags) {
 			command += ` ${this.flagsToString(flags)}`;
 		}
 
-		return shellSync(command);
+		return this.shellSync(command);
 	}
 
-	public reload(id: ProcessIdentifier): ExecaReturns {
-		return shellSync(`pm2 reload ${id}`);
+	public reload(id: ProcessIdentifier): ExecaSyncReturnValue {
+		return this.shellSync(`pm2 reload ${id}`);
 	}
 
-	public reset(id: ProcessIdentifier): ExecaReturns {
-		return shellSync(`pm2 reset ${id}`);
+	public reset(id: ProcessIdentifier): ExecaSyncReturnValue {
+		return this.shellSync(`pm2 reset ${id}`);
 	}
 
-	public delete(id: ProcessIdentifier): ExecaReturns {
-		return shellSync(`pm2 delete ${id}`);
+	public delete(id: ProcessIdentifier): ExecaSyncReturnValue {
+		return this.shellSync(`pm2 delete ${id}`);
 	}
 
-	public flush(): ExecaReturns {
-		return shellSync("pm2 flush");
+	public flush(): ExecaSyncReturnValue {
+		return this.shellSync("pm2 flush");
 	}
 
-	public reloadLogs(): ExecaReturns {
-		return shellSync("pm2 reloadLogs");
+	public reloadLogs(): ExecaSyncReturnValue {
+		return this.shellSync("pm2 reloadLogs");
 	}
 
-	public ping(): ExecaReturns {
-		return shellSync("pm2 ping");
+	public ping(): ExecaSyncReturnValue {
+		return this.shellSync("pm2 ping");
 	}
 
-	public update(): ExecaReturns {
-		return shellSync("pm2 update");
+	public update(): ExecaSyncReturnValue {
+		return this.shellSync("pm2 update");
 	}
 
 	public status(id: ProcessIdentifier): ProcessState | undefined {
@@ -148,7 +152,7 @@ export class Foreman {
 
 	public has(id: ProcessIdentifier): boolean {
 		try {
-			const { stdout } = shellSync(`pm2 id ${id} | awk '{ print $2 }'`);
+			const { stdout } = this.shellSync(`pm2 id ${id} | awk '{ print $2 }'`);
 			return !!stdout && !isNaN(Number(stdout));
 		} catch (error) {
 			return false;
@@ -175,5 +179,9 @@ export class Foreman {
 		}
 
 		return mappedFlags.join(" ");
+	}
+
+	private shellSync(command: string): ExecaSyncReturnValue {
+		return sync(command, { shell: true });
 	}
 }

@@ -1,10 +1,10 @@
 import "jest-extended";
 
-import { ExecaReturns } from "execa";
+import { ExecaSyncReturnValue } from "execa";
 import { resolve } from "path";
 import { Foreman, ProcessDescription, ProcessState } from "../src";
 
-function start(name: string): ExecaReturns {
+function start(name: string): ExecaSyncReturnValue {
 	return foreman.start(
 		{
 			script: resolve(__dirname, "app.js"),
