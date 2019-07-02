@@ -1,6 +1,6 @@
 {
 	"name": "@typeskrift/foreman",
-	"version": "0.1.3",
+	"version": "0.2.0",
 	"description": "Programmatic use of pm2 without callback hell.",
 	"homepage": "https://github.com/typeskrift/foreman",
 	"bugs": {
