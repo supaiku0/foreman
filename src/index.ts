@@ -49,6 +49,10 @@ export class Foreman {
 	public start(opts: Record<string, any>, flags: Record<string, any> = {}): ExecaSyncReturnValue {
 		let command: string = `pm2 start ${opts.script}`;
 
+		if (opts.node_args) {
+			command += ` --node-args="${opts.node_args}"`;
+		}
+
 		if (flags) {
 			command += ` ${this.flagsToString(flags)}`;
 		}
