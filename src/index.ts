@@ -50,7 +50,7 @@ export class Foreman {
 		let command: string = `pm2 start ${opts.script}`;
 
 		if (opts.node_args) {
-			command += ` --node-args="${opts.node_args}"`;
+			command += ` --node-args="${this.flagsToString(opts.node_args)}"`;
 		}
 
 		if (flags) {
